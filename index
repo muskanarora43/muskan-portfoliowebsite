@@ -1,1 +1,574 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Muskan Arora | Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- Modern Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: #0b0f19;
+    color: #e6edf3;
+}
+        /* ============================= */
+/* Container Layout */
+/* ============================= */
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 120px 40px 80px 40px;
+}
+
+/* ============================= */
+/* Header Styling */
+/* ============================= */
+
+header {
+    margin-bottom: 140px;
+}
+
+h1 {
+    font-size: 64px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin: 0;
+
+    background: linear-gradient(
+        90deg,
+        #ffffff,
+        #4f9cf9,
+        #7dd3fc,
+        #4f9cf9,
+        #ffffff
+    );
+
+    background-size: 300% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    animation: gradientMove 6s linear infinite,
+               floatName 4s ease-in-out infinite;
+
+    text-shadow: 0 0 20px rgba(79,156,249,0.4);
+}
+@keyframes gradientMove {
+    0% { background-position: 0% center; }
+    100% { background-position: 300% center; }
+}
+
+@keyframes floatName {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-6px); }
+}
+        .section {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.section.visible {
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+.subtitle {
+    margin-top: 20px;
+    font-size: 20px;
+    color: #9aa4b2;
+}
+
+.highlight {
+    color: #4f9cf9;
+}
+
+
+/* ============================= */
+/* Nav Panel (Glass) */
+/* ============================= */
+
+
+.nav-panel {
+    position: fixed;
+    top: 80px;
+    right: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(14px);
+    padding: 22px;
+    border-radius: 18px;
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+.nav-panel a {
+    text-decoration: none;
+    color: #cbd5e1;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 16px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.nav-panel a:hover {
+    background: rgba(79,156,249,0.15);
+    color: #ffffff;
+}
+
+        .nav-panel a:hover {
+    background: rgba(79,156,249,0.15);
+    color: #ffffff;
+}
+/* ============================= */
+/* Sections */
+/* ============================= */
+
+.section {
+    margin-top: 120px;
+}
+
+h2 {
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #4f9cf9;
+    margin-bottom: 30px;
+}
+
+/* ============================= */
+/* Cards */
+/* ============================= */
+
+        .card {
+    background: #111827;
+    padding: 30px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    border: 1px solid #1f2937;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    border-color: #4f9cf9;
+    transform: translateY(-6px);
+    box-shadow: 0 0 30px rgba(79,156,249,0.25);
+}
+
+.role {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.company {
+    color: #4f9cf9;
+    margin-bottom: 10px;
+}
+
+ul {
+    margin-top: 15px;
+    padding-left: 20px;
+    color: #cbd5e1;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+/* ============================= */
+/* Glass Social Buttons */
+/* ============================= */
+
+        .social-buttons {
+    margin-top: 30px;
+}
+
+.social-buttons a {
+    display: inline-block;
+    margin-right: 15px;
+    padding: 12px 22px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    color: #e6edf3;
+
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    transition: all 0.3s ease;
+}
+
+.social-buttons a:hover {
+    border-color: #4f9cf9;
+    box-shadow: 0 0 20px rgba(79, 156, 249, 0.5);
+    transform: translateY(-2px);
+}
+
+/* Scroll Animation Setup */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+        footer {
+            margin-top: 120px;
+            padding-top: 40px;
+            border-top: 1px solid #1f2937;
+            color: #6b7280;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 40px;
+            }
+        }
+
+        #bgCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;        /* stays behind content */
+    pointer-events: none; /* does not block clicks */
+}
+#scrollBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    width: 0%;
+    background: #4f9cf9;
+    z-index: 9999;
+}
+        
+    </style>
+    
+</head>
+
+<body>
+<canvas id="bgCanvas"></canvas>
+    <div id="scrollBar"></div>
+    
+    
+   <div class="nav-panel">
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#education">Education</a>
+</div>
+   <div class="container">
+    
+    
+<header class="hero">
+    <h1>Muskan Arora</h1>
+    <div class="subtitle">
+        Strategic Account Specialist • 
+        <span class="highlight">Anaplan</span> • Enterprise Integrations
+    </div>
+   <div class="social-buttons">
+    <a href="mailto:aroram22@outlook.com">Email</a>
+    <a href="https://www.linkedin.com/in/muskan-arora1/" target="_blank">LinkedIn</a>
+    <a href="https://github.com/muskanarora43/" target="_blank">GitHub</a>
+    <a href="Muskan_Arora.pdf" target="_blank">Resume</a>
+</div>
+</header>
+
+    <div id="about" class="section">
+    <div class="card">
+       Technical Support & SaaS Platform Specialist with proven success in improving customer outcomes within 
+        complex enterprise environments. Experienced in SQL-based investigation, API troubleshooting, and workflow automation to 
+        resolve technical issues and enhance system reliability. Recognized for structured problem-solving, 
+        clear stakeholder communication, and maintaining a 95%+ customer satisfaction rating in high-impact, client-facing roles.
+    </div>
+    </div>
+
+    <div id="experience" class="section">
+    <h2>Experience</h2>
+
+    <div class="card">
+        <div class="role">Strategic Account Specialist</div>
+        <div class="company">Anaplan</div>
+        <div class="subtitle" style="color:#9aa4b2; font-size:14px; margin-top:5px;">
+            Nov 2024 - Present | Ottawa, ON
+        </div>
+        <ul>
+            <li>Achieved 95%+ Customer Satisfaction (CSAT) by delivering expert technical troubleshooting, rapid-cycle issue resolution, 
+                and proactive Anaplan model optimization to enhance performance and stability.</li>
+            <li>Automated reporting and integration workflows using APIs and Anaplan Connect, improving data reliability and operational scalability.</li>
+            <li>Collaborated cross-functionally with Sales and technical teams to optimize processes and improve system performance, enhancing overall efficiency.</li>
+            <liv>Leveraged Grafana, Tableau, and ServiceNow analytics to perform in-depth trend analysis, delivering actionable insights that directly informed and improved client engagement strategies.</liv>
+        </ul>
+    </div>
+<div class="card">
+        <div class="role">Product Support Analayst</div>
+        <div class="company">Anaplan</div>
+     <div class="subtitle" style="color:#9aa4b2; font-size:14px; margin-top:5px;">
+            Nov 2022 - Nov 2024 | Ottawa, ON
+        </div>
+        <ul>
+            <li>Managed and resolved 10–15 daily cases, identifying system inefficiencies and recommending process improvements aligned with sales operation’s needs.</li>
+            <li>Delivered consistent high-quality reporting insights, contributing to improved customer engagement and operational outcomes.</li>
+            <li>Resolved critical token-based authentication and authorization errors (e.g., SSO, API access), ensuring seamless, secure access for end-users and restoring the reliability of integrated systems.</li>
+
+        </ul>  
+</div>
+
+<div class="card">
+        <div class="role">Product Support Analyst</div> 
+        <div class="company">Caseware</div>
+     <div class="subtitle" style="color:#9aa4b2; font-size:14px; margin-top:5px;">
+            May 2022 - Nov 2022 | Toronto, ON
+        </div>
+        <ul>
+            <li>Managed relationships with 50+ clients while analyzing recurring issues to identify trends and recommend operational improvements</li>
+            <li>Acted as SME to support internal teams with insights, improving decision-making and issue resolution efficiency.</li>
+            <li>Built and structured knowledge repositories (Confluence) to streamline processes and improve team productivity and reporting consistency</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <div class="role">Workforce Management Analyst</div> 
+        <div class="company">247 Intouch</div>
+         <div class="subtitle" style="color:#9aa4b2; font-size:14px; margin-top:5px;">
+            Oct 2017 - Jan 2018 | Winnipeg, ON
+        </div>
+        <ul>
+            <li>Developed workforce forecasting models and schedules for 150+ employees using Excel, improving resource allocation efficiency by 20%.</li>
+            <li>Generated regular reporting packages for leadership, supporting data-driven planning and performance tracking.</li>
+            <li>Analyzed operational data trends to align staffing with demand, enhancing forecast accuracy and productivity.</li>
+        </ul>
+  </div>
+ <div class="card">
+        <div class="role"> Remote Customer Service Representative</div> 
+        <div class="company">SkipTheDishes</div>
+         <div class="subtitle" style="color:#9aa4b2; font-size:14px; margin-top:5px;">
+            March 2018 - Feb 2022 | Winnipeg, ON
+        </div>
+        <ul>
+            <li>Provided real-time customer support via chat and phone, resolving order discrepancies, payment issues, and delivery concerns in a high-volume environment.</li>
+        <li>Maintained strong service metrics by balancing speed and quality, consistently meeting performance benchmarks and customer satisfaction targets.</li>
+        <li>Demonstrated strong conflict resolution and communication skills while handling escalated customer interactions professionally and empathetically.</li>
+        <li>Collaborated with internal teams to troubleshoot platform-related issues, ensuring seamless coordination between customers, restaurants, and delivery partners.</li>
+        </ul>
+ </div>    
+</div>
+    
+    <div id="projects" class="section">
+    <h2>Selected Projects</h2>
+
+                   <div class="card">
+    <div class="role">Personal Portfolio Website | HTML, CSS, JavaScript</div>
+    <div class="company">Self-Initiated Technical Project</div>
+    <ul>
+        <li>Designed and developed a fully responsive personal portfolio website to showcase professional experience, projects, and technical skills.</li>
+        <li>Implemented dynamic UI enhancements including animated particle background (Canvas API), gradient typography effects, smooth section transitions using the Intersection Observer API, and interactive navigation highlighting.</li>
+        <li>Integrated downloadable PDF resume functionality and configured static deployment via GitHub Pages, resolving file routing and asset hosting challenges.</li>
+        <li>Focused on clean layout structure, modular CSS styling, and performance-conscious animations to create a modern SaaS-inspired user experience.</li>
+    </ul>
+</div>
+
+    <div class="card">
+        <div class="role">Sales Performance Dashboard | Power BI</div>
+        <div class="company">Data Analytics Project</div>
+        <ul>
+            <li>Consolidated multi-source monthly financial and sales datasets into a structured analytical model</li>
+            <li>Designed interactive Power BI dashboards using DAX measures and calculated columns</li>
+            <li>Developed KPI tracking for revenue growth, product performance, and regional sales trends</li>
+            <li>Implemented drill-down functionality by product, time period, and geography to support executive-level decision-making</li>
+            <li>Improved visibility into sales performance metrics through dynamic data visualization</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <div class="role">Anaplan Modelling & Automation</div>
+        <div class="company">Enterprise Planning & Integration Simulation</div>
+        <ul>
+            <li>Applied Anaplan modelling best practices to replicate real-world enterprise planning use cases</li>
+            <li>Designed modular model structures for scalability and performance optimization</li>
+            <li>Tested API integration workflows using Postman to validate authentication and endpoint behavior</li>
+            </div>
+
+
+</div>
+    
+<div id="skills" class="section">
+    <h2>Technical Strengths</h2>
+    <div class="card">
+         <strong>Technical Tools</strong><br><br>
+        SQL • Excel (Pivot Tables, Power Query) • Power BI • Tableau • Grafana • Splunk Cloud • CSS • HTML • JavaScript
+    </div>
+    
+<div class="card">
+        <strong>SaaS & Integrations</strong><br><br>
+        Anaplan • Anaplan Connect • Postman • API Troubleshooting • OAuth • REST APIs
+    </div>
+    
+    <div class="card">
+        <strong>Support Platforms</strong><br><br>
+        ServiceNow • Salesforce • JIRA • Confluence
+    </div>
+     <div class="card">
+        <strong>Business & Consulting Skills</strong><br><br>
+        Requirements Gathering • Stakeholder Management • Reporting • Documentation • Root Cause Analysis
+    </div>
+</div>
+    
+<div id="education" class="section">
+    <h2>Education</h2>
+
+    <div class="card">
+        <div class="role">Bachelor of Arts in Economics, Minor in Management</div>
+        <div class="company">University of Manitoba</div>
+        <div class="subtitle" style="color:#9aa4b2; font-size:14px; margin-top:5px;">
+            Apr 2018 – Aug 2021
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    © 2026 Muskan Arora
+</footer>
+
+</div>
+
+<script>
+const sections = document.querySelectorAll(".section");
+const navLinks = document.querySelectorAll(".nav-panel a");
+
+window.addEventListener("scroll", () => {
+    let current = "";
+
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop - 150;
+        if (window.scrollY >= sectionTop) {
+            current = section.getAttribute("id");
+        }
+    });
+
+    navLinks.forEach(link => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === "#" + current) {
+            link.classList.add("active");
+        }
+    });
+});
+
+    const canvas = document.getElementById("bgCanvas");
+const ctx = canvas.getContext("2d");
+
+function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
+
+resizeCanvas();
+window.addEventListener("resize", resizeCanvas);
+
+let particles = [];
+
+class Particle {
+    constructor() {
+        this.reset();
+    }
+
+    reset() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 8 + 4;
+        this.speedY = Math.random() * 0.3 + 0.1;
+    }
+
+    update() {
+        this.y -= this.speedY;
+        if (this.y < 0) {
+            this.reset();
+            this.y = canvas.height;
+        }
+    }
+
+    draw() {
+        ctx.fillStyle = "rgba(79,156,249,0.6)";
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.shadowBlur = 10;
+        ctx.shadowColor = "rgba(79,156,249,0.6)";
+        ctx.fill();
+    }
+}
+
+function init() {
+    particles = [];
+    for (let i = 0; i < 80; i++) {
+        particles.push(new Particle());
+    }
+}
+
+function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    particles.forEach(p => {
+        p.update();
+        p.draw();
+    });
+    requestAnimationFrame(animate);
+}
+
+init();
+animate();
+
+    window.addEventListener("scroll", () => {
+    const scrollTop = document.documentElement.scrollTop;
+    const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const progress = (scrollTop / scrollHeight) * 100;
+    document.getElementById("scrollBar").style.width = progress + "%";
+});
+document.addEventListener("DOMContentLoaded", function () {
+
+    const sections = document.querySelectorAll(".section");
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+            }
+        });
+    }, {
+        threshold: 0.15
+    });
+
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+
+});
+   
+    
+</script>
+        
+</body>
+</html>
